@@ -1,0 +1,44 @@
+/*
+debug: env GTK_DEBUG=interactive ghostty
+https://docs.gtk.org/gtk4/css-overview.html
+https://docs.gtk.org/gtk4/css-properties.html
+*/
+
+@define-color color1 #f222ff;
+@define-color color2 #743ad5;
+@define-color color3 #fc199a;
+@define-color color4 #161925;
+@define-color color5 #ffd318;
+@define-color color6 #ff79c6;
+@define-color color7 #55c6e1;
+
+headerbar {
+  min-height: 24px;
+  padding: 0;
+  margin: 0;
+}
+
+tabbar tabbox {
+  margin: 0;
+  padding: 0;
+  min-height: 10px;
+  background-color: @color4;
+  font-family: monospace;
+}
+
+tabbar tabbox tab {
+  margin: 0;
+  padding: 0;
+  color: @color1;
+  border: 1px solid @color1;
+}
+
+tabbar tabbox tab:selected {
+  background-color: #161925;
+  color: @color5;
+  text-shadow: 0 0 5px @color1;
+}
+
+tabbar tabbox tab label {
+  font-size: 13px;
+}
