@@ -1,6 +1,6 @@
 return {
 	"nvim-telescope/telescope.nvim",
-	tag = "0.1.8",
+	version = "*",
 	dependencies = {
 		{
 			"nvim-telescope/telescope-fzf-native.nvim",
@@ -19,7 +19,7 @@ return {
 					hidden = true,
 				})
 			end,
-			desc = "Lists files in your current working directory, respects .gitignore",
+			desc = "lists files in your current working directory, respects .gitignore",
 		},
 		{
 			";r",
@@ -29,7 +29,7 @@ return {
 					additional_args = { "--hidden" },
 				})
 			end,
-			desc = "Search for a string in your current working directory and get results live as you type, respects .gitignore",
+			desc = "search for a string in your current working directory and get results live as you type, respects .gitignore",
 		},
 		{
 			"\\\\",
@@ -37,7 +37,7 @@ return {
 				local builtin = require("telescope.builtin")
 				builtin.buffers()
 			end,
-			desc = "Lists open buffers",
+			desc = "lists open buffers",
 		},
 		{
 			";t",
@@ -45,7 +45,7 @@ return {
 				local builtin = require("telescope.builtin")
 				builtin.help_tags()
 			end,
-			desc = "Lists available help tags and opens a new window with the relevant help info on <cr>",
+			desc = "lists available help tags and opens a new window with the relevant help info on <cr>",
 		},
 		{
 			";;",
@@ -53,7 +53,7 @@ return {
 				local builtin = require("telescope.builtin")
 				builtin.resume()
 			end,
-			desc = "Resume the previous telescope picker",
+			desc = "resume the previous telescope picker",
 		},
 		{
 			";e",
@@ -61,7 +61,7 @@ return {
 				local builtin = require("telescope.builtin")
 				builtin.diagnostics()
 			end,
-			desc = "Lists Diagnostics for all open buffers or a specific buffer",
+			desc = "lists Diagnostics for all open buffers or a specific buffer",
 		},
 		{
 			";s",
@@ -69,7 +69,7 @@ return {
 				local builtin = require("telescope.builtin")
 				builtin.treesitter()
 			end,
-			desc = "Lists Function names, variables, from Treesitter",
+			desc = "lists Function names, variables, from Treesitter",
 		},
 		{
 			"sf",
@@ -102,7 +102,7 @@ return {
 		telescope.setup({
 			defaults = {
 				wrap_results = true,
-				layout_strategy = "horizontal",
+				layout_strategy = "flex",
 				layout_config = { prompt_position = "top" },
 				sorting_strategy = "ascending",
 				winblend = 0,
@@ -118,6 +118,10 @@ return {
 						preview_cutoff = 9999,
 					},
 				},
+				lsp_references = { jump_type = "never" },
+				lsp_definitions = { jump_type = "never" },
+				lsp_implementations = { jump_type = "never" },
+				lsp_type_definitions = { jump_type = "never" },
 			},
 			extensions = {
 				file_browser = {
