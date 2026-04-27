@@ -1,18 +1,18 @@
 return {
 	{
-		"maxmx03/fluoromachine.nvim",
+		"samharju/synthweave.nvim",
 		lazy = false,
 		priority = 1000,
 		config = function()
-			local fm = require("fluoromachine")
-
-			fm.setup({
-				glow = true,
-				theme = "retrowave",
+			local synthweave = require("synthweave")
+			local palette = require("synthweave.palette")
+			synthweave.setup({
 				transparent = true,
+				overrides = {
+					Statement = { bold = true, fg = palette.yellow },
+				},
 			})
-
-			vim.cmd.colorscheme("fluoromachine")
+			synthweave.load()
 		end,
 	},
 }

@@ -95,6 +95,10 @@ return {
 				capabilities = capabilities,
 				filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
 			},
+			jdtls = {
+				capabilities = capabilities,
+				filetypes = { "java" },
+			},
 		}
 
 		require("mason-lspconfig").setup({

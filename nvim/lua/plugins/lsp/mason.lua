@@ -40,6 +40,8 @@ return {
 				"gopls",
 				"rust_analyzer",
 				"jdtls",
+				"typescript-language-server",
+				"sqls",
 			},
 		})
 
