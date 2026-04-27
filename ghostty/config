@@ -15,6 +15,7 @@ keybind = ctrl+a>j=goto_split:bottom
 
 # tabs
 keybind = ctrl+a>c=new_tab
+keybind = ctrl+a>d=close_tab
 keybind = ctrl+a>n=next_tab
 keybind = ctrl+a>p=previous_tab
 keybind = ctrl+a>m=toggle_tab_overview
