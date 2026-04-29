@@ -6,7 +6,10 @@ currently have:
 
 - [ghostty](ghostty)
 - [neovim](nvim)
+- [hypr](hypr)
 
 ## screenshot
 
 ![](pictures/ghostty-nvim.png)
+
+![](pictures/desktop.png)
