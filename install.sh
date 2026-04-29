@@ -4,7 +4,7 @@
 
 dir=~/dotfiles
 olddir=~/dotfiles_old
-files="nvim ghostty"
+files="nvim ghostty hypr"
 
 # backup
 echo -n "creating $olddir for backup of dotfiles..."
