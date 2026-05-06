@@ -4,27 +4,22 @@ return {
 	dependencies = {
 		"hrsh7th/cmp-nvim-lsp",
 		"nvim-telescope/telescope.nvim",
-		{ "antosha417/nvim-lsp-file-operations", config = true },
-		{ "folke/neodev.nvim", opts = {} },
 	},
 	config = function()
-		local lspconfig = require("lspconfig")
-		local mason_lspconfig = require("mason-lspconfig")
-		local cmp_nvim_lsp = require("cmp_nvim_lsp")
-		local capabilities = cmp_nvim_lsp.default_capabilities()
+		vim.lsp.config("*", {
+			capabilities = require("cmp_nvim_lsp").default_capabilities(),
+		})
 
-		-- ---------------------------------------------
-		-- diagnostics
-		-- ---------------------------------------------
-		local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
-		for type, icon in pairs(signs) do
-			local hl = "DiagnosticSign" .. type
-			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-		end
-
-		-- ---------------------------------------------
-		-- keymaps
-		-- ---------------------------------------------
+		vim.diagnostic.config({
+			signs = {
+				text = {
+					[vim.diagnostic.severity.ERROR] = " ",
+					[vim.diagnostic.severity.WARN] = " ",
+					[vim.diagnostic.severity.HINT] = "󰠠 ",
+					[vim.diagnostic.severity.INFO] = " ",
+				},
+			},
+		})
 
 		vim.api.nvim_create_autocmd("LspAttach", {
 			group = vim.api.nvim_create_augroup("UserLspConfig", {}),
@@ -37,6 +32,7 @@ return {
 				map("n", "gd", function()
 					require("telescope.builtin").lsp_definitions({ reuse_win = true })
 				end, "[g]o to [d]efinition")
+				map("n", "gD", vim.lsp.buf.declaration, "[g]o to [D]eclaration")
 				map("n", "gR", function()
 					require("telescope.builtin").lsp_references({ reuse_win = true })
 				end, "[g]o to [R]eferences")
@@ -47,71 +43,31 @@ return {
 					require("telescope.builtin").lsp_type_definitions({ reuse_win = true })
 				end, "[g]o to t[y]pe definition")
 
+				-- diagnostics
+				map("n", "[d", function()
+					vim.diagnostic.jump({ count = -1, float = true })
+				end, "prev diagnostic")
+				map("n", "]d", function()
+					vim.diagnostic.jump({ count = 1, float = true })
+				end, "next diagnostic")
+				map("n", "<leader>e", vim.diagnostic.open_float, "show line diagnostics")
+				map("n", "<leader>D", function()
+					require("telescope.builtin").diagnostics({ bufnr = 0 })
+				end, "buffer [D]iagnostics")
+
 				-- actions
 				map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, "code action")
 				map("n", "<leader>rn", vim.lsp.buf.rename, "rename")
 
 				-- docs
 				map("n", "K", vim.lsp.buf.hover, "hover docs")
+				map("i", "<C-s>", vim.lsp.buf.signature_help, "signature help")
 			end,
 		})
 
-		local servers = {
-			clangd = {},
-			gopls = {},
-			pyright = {},
-			rust_analyzer = {},
-			svelte = {
-				capabilities = capabilities,
-				on_attach = function(client, bufnr)
-					vim.api.nvim_create_autocmd("BufWritePost", {
-						pattern = { "*.js", "*.ts" },
-						callback = function(ctx)
-							-- Here use ctx.match instead of ctx.file
-							client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.match })
-						end,
-					})
-				end,
-			},
-			lua_ls = {
-				capabilities = capabilities,
-				settings = {
-					Lua = {
-						-- make the language server recognize "vim" global
-						diagnostics = {
-							globals = { "vim" },
-						},
-						completion = {
-							callSnippet = "Replace",
-						},
-					},
-				},
-			},
-			emmet_ls = {
-				capabilities = capabilities,
-				filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
-			},
-			graphql = {
-				capabilities = capabilities,
-				filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
-			},
-			jdtls = {
-				capabilities = capabilities,
-				filetypes = { "java" },
-			},
-		}
-
-		require("mason-lspconfig").setup({
-			handlers = {
-				function(server_name)
-					local server = servers[server_name] or {}
-					-- This handles overriding only values explicitly passed
-					-- by the server configuration above. Useful when disabling
-					-- certain features of an LSP (for example, turning off formatting for tsserver)
-					server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
-					require("lspconfig")[server_name].setup(server)
-				end,
-			},
+		vim.lsp.enable({
+			"ts_ls", "html", "cssls", "emmet_ls",
+			"lua_ls", "pyright", "clangd", "gopls", "sqls",
 		})
 	end,
 }
