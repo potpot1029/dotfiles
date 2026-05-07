@@ -7,6 +7,7 @@ currently have:
 - [ghostty](ghostty)
 - [neovim](nvim)
 - [hypr](hypr)
+- [waybar](waybar)
 
 ## screenshot
 
