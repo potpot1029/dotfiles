@@ -1,0 +1,12 @@
+export XDG_CONFIG_HOME=$HOME/.config
+
+source <(fzf --zsh)
+
+alias sd="cd ~ && cd \$(find * -type d | fzf)"
+
+alias ls='eza --color=always'
+alias ll='eza -lh --color=always --icons'
+alias la='eza -lah --color=always --icons'
+alias l='eza -lah --color=always --icons --git'
+
+
