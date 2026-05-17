@@ -1,36 +1,26 @@
-# Magi UI Synthwave (Ghostty)
-# Source palette: Magi UI Synthwave JetBrains/Zed/OpenCode targets in this repository.
+background = #1a1424
+foreground = #e8d6f0
+cursor-color = #ff7edb
+selection-background = #3d2e52
+selection-foreground = #e8d6f0
 
-background = #13051f
-foreground = #55c6e1
 
-cursor-color = #d21e85
-cursor-text = #55c6e1
+# ANSI normal
+palette = 0=#1a1424
+palette = 1=#fe4450
+palette = 2=#72f1b8
+palette = 3=#fede5d
+palette = 4=#36f9f6
+palette = 5=#ff7edb
+palette = 6=#36f9f6
+palette = 7=#e8d6f0
 
-selection-background = #9963ff
-selection-foreground = #55c6e1
-
-split-divider-color = #2d172d
-
-search-background = #9963ff
-search-foreground = #55c6e1
-search-selected-background = #d21e85
-search-selected-foreground = #55c6e1
-
-palette = 0=#13051f
-palette = 1=#d1243b
-palette = 2=#55c6e1
-palette = 3=#f1bf02
-palette = 4=#9963ff
-palette = 5=#d21e85
-palette = 6=#b059b1
-palette = 7=#8c8c8c
-
-palette = 8=#498099
-palette = 9=#d1243b
-palette = 10=#55c6e1
-palette = 11=#f1bf02
-palette = 12=#9963ff
-palette = 13=#d21e85
-palette = 14=#b059b1
-palette = 15=#f222ff
+# ANSI bright
+palette = 8=#3d2e52
+palette = 9=#ff6b78
+palette = 10=#9bf5ce
+palette = 11=#fff099
+palette = 12=#c4dbed
+palette = 13=#ffaae6
+palette = 14=#7afaf8
+palette = 15=#fbf9ff

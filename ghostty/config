@@ -4,26 +4,3 @@ window-decoration = auto
 theme = light:custom-synthwave,dark:custom-synthwave
 background-opacity = 0.85
 background-blur = false
-
-# splits and navigation
-keybind = ctrl+a>|=new_split:right
-keybind = ctrl+a>-=new_split:up
-keybind = ctrl+a>h=goto_split:left
-keybind = ctrl+a>l=goto_split:right
-keybind = ctrl+a>k=goto_split:top
-keybind = ctrl+a>j=goto_split:bottom
-
-# tabs
-keybind = ctrl+a>c=new_tab
-keybind = ctrl+a>d=close_tab
-keybind = ctrl+a>n=next_tab
-keybind = ctrl+a>p=previous_tab
-keybind = ctrl+a>m=toggle_tab_overview
-
-# reference: https://github.com/ttys3/my-ghostty-config/blob/main/config
-gtk-custom-css = tab-style.css
-gtk-wide-tabs = false
-gtk-tabs-location = bottom
-
-# reload config
-keybind = ctrl+a>r=reload_config
