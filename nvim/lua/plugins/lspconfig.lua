@@ -50,7 +50,7 @@ return {
 				map("n", "]d", function()
 					vim.diagnostic.jump({ count = 1, float = true })
 				end, "next diagnostic")
-				map("n", "<leader>e", vim.diagnostic.open_float, "show line diagnostics")
+				map("n", "<leader>d", vim.diagnostic.open_float, "show line diagnostics")
 				map("n", "<leader>D", function()
 					require("telescope.builtin").diagnostics({ bufnr = 0 })
 				end, "buffer [D]iagnostics")
@@ -66,8 +66,15 @@ return {
 		})
 
 		vim.lsp.enable({
-			"ts_ls", "html", "cssls", "emmet_ls",
-			"lua_ls", "pyright", "clangd", "gopls", "sqls",
+			"ts_ls",
+			"html",
+			"cssls",
+			"emmet_ls",
+			"lua_ls",
+			"pyright",
+			"clangd",
+			"gopls",
+			"sqls",
 		})
 	end,
 }

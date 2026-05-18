@@ -8,6 +8,7 @@ return {
 			"nvim-tree/nvim-web-devicons", -- optional, but recommended
 		},
 		lazy = false,
+		priority = 90000,
 		keys = {
 			{
 				"<leader>e",
@@ -31,5 +32,12 @@ return {
 				desc = "buffer explorer",
 			},
 		},
+		config = function()
+			require("neo-tree").setup({
+				filesystem = {
+					hijack_netrw_behavior = "open_default",
+				},
+			})
+		end,
 	},
 }

@@ -9,6 +9,7 @@ return {
 		"nvim-telescope/telescope-file-browser.nvim",
 		"nvim-tree/nvim-web-devicons",
 	},
+	lazy = false,
 	keys = {
 		{
 			";f",
