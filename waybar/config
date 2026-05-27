@@ -1,5 +1,6 @@
 {
   "layer": "top",
+  "margin-bottom": 5,
   "modules-left": [
     "custom/arch", 
     "custom/power",
@@ -34,7 +35,7 @@
     "format": "  ",
     "tooltip": false,
     "on-click": "rofi -show drun", 
-     "height": 30,
+    "height": 30,
   },
 
   "clock": {
@@ -87,7 +88,8 @@
 
   "custom/power": {
    "format": "⏻",
-   "on-click": "wlogout"
+   "on-click": "wlogout",
+   "tooltip": false,
   },
 
 }

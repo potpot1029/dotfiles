@@ -4,18 +4,22 @@
 @define-color color4 #161925;
 @define-color color5 #ffd318;
 @define-color color6 #ff79c6;
-
-window#waybar {
-  background: transparent;
-}
+@define-color color7 #36f9f6;
 
 * {
   font-family: "BlexMono Nerd Font";
-  font-size: 17px;
-  min-height: 15px;
+  font-size: 16px;
+  min-height: 0;
   text-shadow: 0 0 5px @color3;
+  border: none;
+  border-radius: 0;
 }
 
+window#waybar {
+  background: @color4;
+}
+
+#custom-arch,
 #workspaces,
 #window,
 #tray,
@@ -24,42 +28,25 @@ window#waybar {
 #clock,
 #custom-power {
   color: @color1;
-  background-color: @color4;
-  border-radius: 8px;
-  text-shadow: 0 0 5px @color3;
-  border: 1px solid @color1;
-  margin-top: 10px;
   padding: 0 10px;
-}
-
-#window {
-  border: 1px solid;
-  border-image-slice: 1;
-  border-image-source: linear-gradient(to left, @color2, @color1, @color2);
+  border-bottom: 1.5px solid @color7;
   margin-left: 10px;
-  padding: 5px 10px;
 }
 
 #custom-arch {
   background-color: #f3e70f;
+  margin-left: 0;
   color: @color1;
-  margin-top: 10px;
-  margin-left: 10px;
-  margin-right: 10px;
-  border-radius: 8px;
   padding: 5px 10px 5px 5px;
 }
 
 #workspaces {
-  margin-left: 10px;
-  margin-right: 10px;
   padding: 0 5px;
 }
 
 #workspaces button {
   transition: none;
   color: @color1;
-  background: transparent;
   padding-right: 13px;
 }
 
@@ -72,13 +59,6 @@ window#waybar {
   box-shadow: inherit;
   text-shadow: inherit;
   color: @color6;
-}
-
-#tray,
-#wireplumber,
-#clock,
-#network {
-  margin-right: 10px;
 }
 
 #custom-power {
