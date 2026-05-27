@@ -53,6 +53,11 @@ hl.window_rule({ match = { class = "steam" }, workspace = "5" })
 hl.window_rule({ match = { class = "discord" }, workspace = "6" })
 hl.window_rule({ match = { class = "ticktick" }, workspace = "8" })
 
+hl.window_rule({ match = { class = "obsidian" }, workspace = "special:obsidian" })
+
+-- misc
+hl.window_rule({ match = { class = "obsidian" }, focus_on_activate = true })
+
 -------------------
 ---- WORKSPACE ----
 -------------------

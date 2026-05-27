@@ -12,11 +12,12 @@ hl.bind(mainMod .. " + C", hl.dsp.window.close())
 
 -- utility
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("pkill waybar && waybar &"))
-hl.bind(
-	mainMod .. " + M",
-	hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'")
-)
-hl.bind(secondMod .. " + M", hl.dsp.exec_cmd("hyprlock"))
+-- hl.bind(
+-- 	mainMod .. " + M",
+-- 	hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'")
+-- )
+hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("hyprlock"))
+hl.bind(secondMod .. " + M", hl.dsp.exec_cmd("rofi -modi emoji -show emoji"))
 
 -- screenshot
 hl.bind(secondMod .. " + D", hl.dsp.exec_cmd("hyprshot -m window"))
@@ -28,6 +29,12 @@ hl.bind(mainMod .. " + H", hl.dsp.focus({ direction = "left" }))
 hl.bind(mainMod .. " + L", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + J", hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + K", hl.dsp.focus({ direction = "down" }))
+
+-- move window
+hl.bind(mainMod .. " + SHIFT + H", hl.dsp.window.move({ direction = "left" }))
+hl.bind(mainMod .. " + SHIFT + L", hl.dsp.window.move({ direction = "right" }))
+hl.bind(mainMod .. " + SHIFT + J", hl.dsp.window.move({ direction = "up" }))
+hl.bind(mainMod .. " + SHIFT + K", hl.dsp.window.move({ direction = "down" }))
 
 -- window manipulation
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
@@ -42,9 +49,9 @@ for i = 1, 10 do
 	hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
 end
 
--- Example special workspace (scratchpad)
-hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("magic"))
-hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
+-- special workspace
+hl.bind(mainMod .. " + Z", hl.dsp.workspace.toggle_special("obsidian"))
+hl.bind(mainMod .. " + SHIFT + Z", hl.dsp.window.move({ workspace = "special:obsidian" }))
 
 -- scroll through existing workspaces with mainMod + scroll
 hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
