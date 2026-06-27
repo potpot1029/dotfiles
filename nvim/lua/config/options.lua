@@ -1,4 +1,5 @@
 vim.g.mapleader = " "
+vim.g.have_nerd_font = true
 
 vim.cmd("autocmd!")
 
@@ -26,7 +27,8 @@ vim.opt.smarttab = true
 vim.opt.breakindent = true
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
-vim.opt.wrap = false -- no wrap lines
+vim.opt.wrap = false
+vim.opt.linebreak = false -- line break
 vim.opt.backspace = { "start", "eol", "indent" }
 vim.opt.path:append({ "**" }) -- search down into subfolders when finding files
 vim.opt.splitright = true -- split vertical window to the right

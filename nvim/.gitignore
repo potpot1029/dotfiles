@@ -1,0 +1,6 @@
+# Neovim runtime logs (written to cwd when nvim is launched from this dir)
+nvim.log
+*.log
+
+# blink-cmp-dictionary word lists (provisioned per-machine, not tracked)
+dictionary/
