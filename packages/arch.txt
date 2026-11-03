@@ -1,0 +1,76 @@
+# build / core
+base-devel
+git
+zsh
+
+# shell tools (.zshrc, starship)
+starship
+fzf
+eza
+fd
+ripgrep
+lazygit
+github-cli
+tree
+unzip
+wget
+rsync
+fnm
+uv
+go
+rustup
+python
+
+# terminal
+ghostty
+tmux
+
+# neovim (+ what plugins shell out to)
+neovim
+tree-sitter-cli
+jdk21-openjdk
+clang
+wl-clipboard
+xdg-utils
+zathura
+zathura-pdf-mupdf
+openai-codex
+
+# fonts (BlexMono Nerd Font: ghostty, waybar)
+ttf-ibmplex-mono-nerd
+ttf-ibm-plex
+noto-fonts-emoji
+noto-fonts-cjk
+
+# hyprland desktop (hypr/, waybar/)
+hyprland
+hyprlock
+hyprpaper
+hyprshot
+xdg-desktop-portal-hyprland
+waybar
+rofi
+rofi-emoji
+thunar
+dunst
+grim
+slurp
+pipewire
+pipewire-pulse
+wireplumber
+brightnessctl
+playerctl
+polkit-kde-agent
+qt5-wayland
+qt6-wayland
+xsettingsd
+solaar
+fcitx5
+fcitx5-configtool
+fcitx5-gtk
+fcitx5-qt
+fcitx5-rime
+
+# apps started by hypr/modules/autostart.lua
+discord
+steam

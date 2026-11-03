@@ -1,0 +1,33 @@
+# shell tools (.zshrc, starship)
+brew "git"
+brew "starship"
+brew "fzf"
+brew "eza"
+brew "fd"
+brew "ripgrep"
+brew "lazygit"
+brew "gh"
+brew "tree"
+brew "wget"
+brew "fnm"
+brew "uv"
+brew "go"
+brew "rustup"
+brew "python@3.13" # palette/generate.py needs 3.11+ (tomllib)
+
+# terminal
+cask "ghostty"
+brew "tmux"
+
+# neovim (+ what plugins shell out to)
+brew "neovim"
+brew "tree-sitter-cli"
+brew "openjdk@21"
+cask "codex"
+cask "claude-code"
+
+# fonts (BlexMono Nerd Font: ghostty)
+cask "font-blex-mono-nerd-font"
+
+# apps
+cask "obsidian"

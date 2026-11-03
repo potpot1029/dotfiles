@@ -1,0 +1,61 @@
+# Synthwave palette: single source of truth for all tool colours.
+# Edit here, then run:  ~/.config/palette/generate.py
+#
+# Several entries are near-duplicates kept so nothing changed visually when the
+# palette was introduced (bg/bg_dark/bg_alt, yellow/yellow_warm/yellow_bright,
+# rose/pink_light/pink). Point them at the same value to unify.
+
+[colors]
+# backgrounds
+bg            = "#1a1424"  # ghostty background, tmux message text
+bg_dark       = "#161925"  # waybar bar, nvim background, hyprlock input
+bg_alt        = "#241b2f"  # tmux status bar
+surface       = "#2e2a4f"  # tmux pane borders
+selection     = "#3d2e52"  # ghostty selection
+selection_alt = "#463465"  # tmux copy-mode selection
+black         = "#1a1a1a"  # hyprland window shadow
+gray          = "#444444"  # hyprland inactive border
+
+# foregrounds
+fg            = "#a2c7e5"
+fg_muted      = "#848bbd"  # tmux inactive windows / path
+
+# accents
+magenta       = "#f222ff"
+purple        = "#743ad5"
+pink          = "#fc199a"
+pink_light    = "#ff79c6"  # waybar workspace hover
+rose          = "#ff7edb"  # ghostty cursor / ANSI magenta
+red           = "#fe4450"
+cyan          = "#36f9f6"
+blue          = "#6e8bff"  # ANSI blue
+green         = "#72f1b8"
+yellow        = "#fede5d"  # ANSI yellow, tmux prefix indicator
+yellow_warm   = "#ffd318"  # waybar active workspace
+yellow_bright = "#f3e70f"  # waybar arch button, starship git branch
+orange        = "#ff8b39"
+lavender      = "#b893ce"
+amber         = "#cc8822"  # hyprlock checking
+crimson       = "#cc2222"  # hyprlock failure
+
+# ANSI bright variants
+bright_red     = "#ff6b78"
+bright_green   = "#9bf5ce"
+bright_yellow  = "#fff099"
+bright_blue    = "#9db0ff"
+bright_magenta = "#ffaae6"
+bright_cyan    = "#7afaf8"
+bright_white   = "#fbf9ff"
+
+# Terminal (ghostty) colours, by palette name or hex
+[terminal]
+background           = "bg"
+foreground           = "fg"
+cursor               = "rose"
+selection_background = "selection"
+selection_foreground = "fg"
+ansi = [
+  "bg", "red", "green", "yellow", "blue", "rose", "cyan", "fg",
+  "selection", "bright_red", "bright_green", "bright_yellow",
+  "bright_blue", "bright_magenta", "bright_cyan", "bright_white",
+]

@@ -1,0 +1,61 @@
+/* palette, generated from ~/.config/palette */
+@import "colors.css";
+
+* {
+  font-family: "BlexMono Nerd Font";
+  font-size: 16px;
+  min-height: 0;
+  text-shadow: 0 0 5px @pink;
+  border: none;
+  border-radius: 0;
+}
+
+window#waybar {
+  background: @bg_dark;
+}
+
+#custom-arch,
+#workspaces,
+#window,
+#tray,
+#network,
+#wireplumber,
+#clock,
+#custom-power {
+  color: @magenta;
+  padding: 0 10px;
+  border-bottom: 1.5px solid @cyan;
+  margin-left: 10px;
+}
+
+#custom-arch {
+  background-color: @yellow_bright;
+  margin-left: 0;
+  color: @magenta;
+  padding: 5px 10px 5px 5px;
+}
+
+#workspaces {
+  padding: 0 5px;
+}
+
+#workspaces button {
+  transition: none;
+  color: @magenta;
+  padding-right: 13px;
+}
+
+#workspaces button.active {
+  color: @yellow_warm;
+}
+
+#workspaces button:hover {
+  transition: none;
+  box-shadow: inherit;
+  text-shadow: inherit;
+  color: @pink_light;
+}
+
+#custom-power {
+  padding-right: 14px;
+}

@@ -1,0 +1,8 @@
+# AUR packages (installed with yay or paru). Install: ./install.sh --packages
+obsidian-bin
+helium-browser-bin
+ticktick
+surfshark-client
+wlogout
+pwvucontrol
+claude-code
